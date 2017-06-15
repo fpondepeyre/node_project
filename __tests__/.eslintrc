@@ -1,0 +1,21 @@
+---
+  extends: "airbnb"
+  env:
+    node: true
+    jest: true
+  globals:
+    expect: true
+  rules:
+    import/no-extraneous-dependencies:
+      - "error"
+      - devDependencies: true
+    import/no-dynamic-require: "off"
+    new-cap:
+      - "error"
+      - capIsNewExceptions:
+          - "express.Router"
+    arrow-parens: 0
+    comma-dangle: [2, "always-multiline"]
+    no-plusplus:
+    - error
+    - allowForLoopAfterthoughts: true

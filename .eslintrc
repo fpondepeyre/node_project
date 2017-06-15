@@ -1,0 +1,14 @@
+---
+  extends: "airbnb"
+  env:
+    node: true
+  rules:
+    new-cap:
+      - "error"
+      - capIsNewExceptions:
+          - "express.Router"
+    arrow-parens: 0
+    comma-dangle: ["error", "always-multiline"]
+    no-plusplus:
+    - error
+    - allowForLoopAfterthoughts: true
