@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-module.exports = function appFactory(makeRouter) {
+module.exports = function appFactory(makeRouter, context) {
   const app = express();
 
   // Config.
@@ -11,7 +11,7 @@ module.exports = function appFactory(makeRouter) {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
-  app.use(makeRouter());
+  app.use(makeRouter(context));
 
   return app;
 };

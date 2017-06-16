@@ -14,7 +14,7 @@ describe('server.app', () => {
 
       return router;
     };
-  
+
     const app = appFactory(makeRouter);
 
     return request(app)

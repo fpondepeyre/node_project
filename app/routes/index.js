@@ -1,14 +1,15 @@
 const express = require('express');
+const _ = require('lodash');
 
-const makeRouter = () => {
+const ROUTE_FACTORY = [
+  'home',
+];
+
+const makeRouter = (context) => {
   const router = express.Router();
 
-  router.get('/', (req, res) => {
-    res.send('<h1>It Works!</h1>');
-  });
-
-  router.get('/toto', (req, res) => {
-    res.send('<h1>It Works!</h1>');
+  _.each(ROUTE_FACTORY, (routeFactory) => {
+    require(`./${routeFactory}`)(router, context); // eslint-disable-line global-require, import/no-dynamic-require
   });
 
   return router;

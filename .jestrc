@@ -3,5 +3,8 @@
     "<rootDir>/config/",
     "<rootDir>/node_modules/"
   ],
-  "testEnvironment": "node"
+  "testEnvironment": "node",
+  "testPathIgnorePatterns": [
+    "<rootDir>/__tests__/fixtures/"
+  ]
 }
